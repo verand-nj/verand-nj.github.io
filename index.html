@@ -1,20 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-  <title>Portfolio Verand</title>
-  <link rel="stylesheet" href="style.css">
-  <a href="cv.pdf">Télécharger mon CV</a>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verand NJ — Portfolio BTS SIO SISR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Bienvenue sur mon portfolio</h1>
-  <p>Je suis étudiant en BTS SIO</p>
-  <h2>À propos de moi</h2>
-  <p>Étudiant en BTS SIO, passionné par l’informatique...</p>
-  <h2>Mes projets</h2>
-  <ul>
-    <li>Installation GLPI</li>
-    <li>Configuration réseau VLAN</li>
-    <li>Script Python</li>
-  </ul>
+
+  <!-- Curseur personnalisé -->
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar">
+    <span class="nav-logo">VNJ<span class="accent">.</span></span>
+    <ul class="nav-links">
+      <li><a href="#about">À propos</a></li>
+      <li><a href="#fiches">E6</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#veille informatique">veille informatique</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-noise"></div>
+    <div class="hero-counter" id="heroNum">26</div>
+    <p class="hero-tag" id="heroTag">BTS SIO SISR — Session 2026 — KPark</p>
+    <h1 id="heroTitle">Verand<br>Nguie</h1>
+    <p class="hero-sub" id="heroSub">
+      Administrateur systèmes &amp; réseaux en devenir.<br>
+      Infrastructure, sécurité, supervision — je déploie, je configure, je documente.
+    </p>
+    <div class="hero-btns" id="heroBtns">
+      <a class="btn btn-accent" href="#fiches">Fiches E6</a>
+      <a class="btn btn-ghost" href="#projets">Mes projets</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- À PROPOS -->
+  <div class="bg-alt" id="about">
+    <div class="section reveal">
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2 class="section-title">À propos</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Actuellement en étude à l'ESGI Paris, je me spécialise dans l'administration des systèmes et des réseaux et explore d'autre domaine de l'IT autre que le réseau. En ce qui concerne mon BTS, mon objectif : concevoir, déployer et superviser des infrastructures robustes et sécurisées.</p>
+          <p>En <strong>alternance chez KPark</strong> — entreprise française spécialisée dans l'isolation thermique — je travaille au sein du département IT au siège, sous la supervision de Julien Caro et Kamal Haddadi, en lien avec la DSI dirigée par François Banse.</p>
+          <p>Mon quotidien : support utilisateur, gestion de parc, et participation active aux projets d'infrastructure de l'entreprise.</p>
+        </div>
+        <div>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-num" data-target="2">0</div>
+              <div class="stat-label">Fiches E6</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-target="..">0</div>
+              <div class="stat-label">Projets réalisés</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-target="8">0</div>
+              <div class="stat-label">Technologies</div>
+            </div>
+            <div class="stat">
+              <div class="stat-num" data-target="2026">0</div>
+              <div class="stat-label">Session BTS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FICHES E6 -->
+  <div id="fiches">
+    <div class="section reveal">
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2 class="section-title">Fiches E6</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="fiches-grid">
+
+        <!-- Fiche Système -->
+        <a class="fiche-card" href="Fiche_Système.pdf" target="_blank">
+          <div class="fiche-arrow">↗</div>
+          <div class="fiche-num">01 — Système</div>
+          <div class="fiche-title">Infrastructure virtualisée Proxmox VE</div>
+          <div class="fiche-desc">
+            Déploiement d'un AD Windows Server 2022, GLPI avec inventaire automatisé et supervision Zabbix pour Kamen Service. Environnement complet sur PC Lenovo ThinkCentre (i5, 16 Go).
+          </div>
+          <div class="fiche-tags">
+            <span class="fiche-tag">Proxmox VE</span>
+            <span class="fiche-tag">Windows Server 2022</span>
+            <span class="fiche-tag">GLPI</span>
+            <span class="fiche-tag">Zabbix</span>
+            <span class="fiche-tag">pfSense</span>
+            <span class="fiche-tag">Debian 12</span>
+          </div>
+        </a>
+
+        <!-- Fiche Réseau -->
+        <a class="fiche-card" href="Fiche_Réseau.pdf" target="_blank">
+          <div class="fiche-arrow">↗</div>
+          <div class="fiche-num">02 — Réseau</div>
+          <div class="fiche-title">Réseau sécurisé Cisco SG350-28MP</div>
+          <div class="fiche-desc">
+            Segmentation en 4 VLANs par pôle (Direction, RH, Comptabilité, IT), routage inter-VLAN via SVI, DHCP Snooping, Port Security et administration SSH.
+          </div>
+          <div class="fiche-tags">
+            <span class="fiche-tag">Cisco SG350</span>
+            <span class="fiche-tag">VLAN</span>
+            <span class="fiche-tag">Inter-VLAN SVI</span>
+            <span class="fiche-tag">SSH</span>
+            <span class="fiche-tag">Port Security</span>
+            <span class="fiche-tag">DHCP Snooping</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- PROJETS -->
+  <div class="bg-alt" id="projets">
+    <div class="section reveal">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2 class="section-title">Projets</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="projects-list">
+
+        <a class="project-row" href="#" target="_blank">
+          <span class="project-idx">01</span>
+          <div>
+            <div class="project-name">UpcycleConnect</div>
+            <div class="project-tech">Infrastructure multi-sites · API REST Go · MySQL · OVHcloud VPS · Proxmox</div>
+          </div>
+          <span class="project-context">ESGI</span>
+          <span class="project-year">2025–2026</span>
+        </a>
+
+        <a class="project-row" href="#" target="_blank">
+          <span class="project-idx">02</span>
+          <div>
+            <div class="project-name">Application Restaurant Docker</div>
+            <div class="project-tech">PostgreSQL · PHP API · Go API · Nginx · Docker Compose</div>
+          </div>
+          <span class="project-context">ESGI</span>
+          <span class="project-year">2025</span>
+        </a>
+
+        <a class="project-row" href="#" target="_blank">
+          <span class="project-idx">03</span>
+          <div>
+            <div class="project-name">TP pfSense IPsec VPN</div>
+            <div class="project-tech">VPN IPsec · DNS Unbound · GLPI DMZ · pfSense double-site</div>
+          </div>
+          <span class="project-context">ESGI</span>
+          <span class="project-year">2025</span>
+        </a>
+
+        <a class="project-row" href="#" target="_blank">
+          <span class="project-idx">04</span>
+          <div>
+            <div class="project-name">KPark — Alternance IT</div>
+            <div class="project-tech">Support N1/N2 · Gestion de parc · ITSM · Windows</div>
+          </div>
+          <span class="project-context">Alternance</span>
+          <span class="project-year">2024–2026</span>
+        </a>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPÉTENCES -->
+  <div id="skills">
+    <div class="section reveal">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2 class="section-title">Compétences</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="skills-container">
+
+        <div class="skill-block">
+          <h3>Système</h3>
+          <div class="skill-item"><span class="skill-name">Proxmox VE</span><div class="skill-bar"><div class="skill-bar-fill" data-w="85"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Windows Server</span><div class="skill-bar"><div class="skill-bar-fill" data-w="80"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Active Directory</span><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Debian / Linux / Kali</span><div class="skill-bar"><div class="skill-bar-fill" data-w="70"></div></div></div>
+          <div class="skill-item"><span class="skill-name">pfSense</span><div class="skill-bar"><div class="skill-bar-fill" data-w="65"></div></div></div>
+          <div class="skill-item"><span class="skill-name">EVE-NG</span><div class="skill-bar"><div class="skill-bar-fill" data-w="80"></div></div></div>
+        </div>
+
+        <div class="skill-block">
+          <h3>Réseau</h3>
+          <div class="skill-item"><span class="skill-name">Cisco IOS</span><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+          <div class="skill-item"><span class="skill-name">VLANs & Routage</span><div class="skill-bar"><div class="skill-bar-fill" data-w="80"></div></div></div>
+          <div class="skill-item"><span class="skill-name">SSH / Administration</span><div class="skill-bar"><div class="skill-bar-fill" data-w="85"></div></div></div>
+          <div class="skill-item"><span class="skill-name">DHCP Snooping</span><div class="skill-bar"><div class="skill-bar-fill" data-w="70"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Zabbix</span><div class="skill-bar"><div class="skill-bar-fill" data-w="65"></div></div></div>
+          <div class="skill-item"><span class="skill-name">VPN IPSec</span><div class="skill-bar"><div class="skill-bar-fill" data-w="70"></div></div></div>
+        </div>
+
+        <div class="skill-block">
+          <h3>Outils & Dev</h3>
+          <div class="skill-item"><span class="skill-name">Docker</span><div class="skill-bar"><div class="skill-bar-fill" data-w="70"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Go (API REST)</span><div class="skill-bar"><div class="skill-bar-fill" data-w="60"></div></div></div>
+          <div class="skill-item"><span class="skill-name">Data Mining</span><div class="skill-bar"><div class="skill-bar-fill" data-w="55"></div></div></div>
+          <div class="skill-item"><span class="skill-name">C</span><div class="skill-bar"><div class="skill-bar-fill" data-w="55"></div></div></div>
+          <div class="skill-item"><span class="skill-name">OSINT</span><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+          <div class="skill-item"><span class="skill-name">GANTT Project</span><div class="skill-bar"><div class="skill-bar-fill" data-w="75"></div></div></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">VNJ<span class="accent">.</span></div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/verand-nj" target="_blank">GitHub</a></li>
+        <li><a href="mailto:verandnguie02@gmail.comm">Contact</a></li>
+      </ul>
+      <span class="footer-year">© 2026 — verand-nj.github.io</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
