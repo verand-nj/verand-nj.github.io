@@ -74,6 +74,13 @@ body{
   font-size:clamp(30px,7vw,42px); margin:6px 0 4px; color:var(--plum-1);}
 .letter p.sub{color:var(--ink-soft); font-size:15px; margin-top:8px;}
 
+/* ---------- Petit encadré "blague" ---------- */
+.joke{background:#fff3f5; border:1.5px dashed rgba(181,42,74,.35); border-radius:14px;
+  padding:12px 16px; margin:12px 0 8px;}
+.joke p{font-family:'Caveat',cursive; font-weight:700; font-size:23px; line-height:1.25; color:#8a2a44;}
+.joke-wink{display:block; margin-top:6px; font-size:13px; font-weight:600;
+  font-family:'Nunito',sans-serif; color:var(--ink-soft);}
+
 /* ---------- Boutons Oui / Non ---------- */
 .qa-arena{position:relative; height:180px; margin-top:22px;}
 .btn{font-family:'Nunito',sans-serif; font-weight:700; border:none; cursor:pointer;
@@ -87,11 +94,13 @@ body{
 /* ---------- Choix d'activité ---------- */
 .choices{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:22px;}
 .choice{background:var(--paper); color:var(--ink); border:2px solid transparent;
-  border-radius:14px; padding:18px 12px; cursor:pointer; text-align:center;
+  border-radius:14px; padding:16px 12px; cursor:pointer; text-align:center;
   font-weight:700; font-size:15px; transition:transform .12s, border-color .2s, background .2s;
-  box-shadow:0 8px 18px rgba(0,0,0,.18);}
-.choice .emoji{display:block; font-size:30px; margin-bottom:8px;}
-.choice small{display:block; font-weight:400; color:var(--ink-soft); font-size:12px; margin-top:3px;}
+  box-shadow:0 8px 18px rgba(0,0,0,.18);
+  display:flex; flex-direction:column; align-items:center; justify-content:flex-start; min-height:122px;}
+.choice .emoji{font-size:30px; margin-bottom:6px; line-height:1;}
+.choice .c-title{line-height:1.15;}
+.choice small{display:block; font-weight:400; color:var(--ink-soft); font-size:12px; margin-top:5px; line-height:1.25;}
 .choice:hover{transform:translateY(-3px);}
 .choice.selected{border-color:#b52a4a; background:#fff0f2;}
 .choice:focus-visible{outline:3px solid var(--gold); outline-offset:3px;}
