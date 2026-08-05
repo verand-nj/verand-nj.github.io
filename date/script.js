@@ -2,9 +2,10 @@
    👉 À PERSONNALISER — c'est ICI et NULLE PART AILLEURS
    ============================================================ */
 const CONFIG = {
-  herName:  "Madame",                 // ex: "Léa" (laisse vide "" si tu veux la surprise)
+  herName:  "Vivi",                 // ex: "Léa" (laisse vide "" si tu veux la surprise)
   myName:   "Verand",           // ton prénom
   myPhone:  "33695492708",      // ton numéro international SANS le "+"  (FR: 06 12 34 56 78 -> "33612345678")
+  web3formsKey: "627e14a2-d95a-443a-a27f-077ff2707de2", // 👈 colle ici la clé reçue sur web3forms.com (voir instructions)
 };
 /* ============================================================ */
 
@@ -115,12 +116,45 @@ function buildRecap(){
   const who=CONFIG.herName.trim()?CONFIG.herName.trim()+' — ':'';
   const msg=`Coucou ${CONFIG.myName} ! C'est OUI 💖 ${who}Je suis dispo le ${dTxt} à ${tTxt} et j'adorerais un ${pick.act.toLowerCase()}. Viens me chercher avec mes fleurs 🌹😄`;
   document.getElementById('waBtn').href=`https://wa.me/${CONFIG.myPhone}?text=${encodeURIComponent(msg)}`;
+  // SMS pré-rempli (fonctionne sur iPhone et Android) :
+  document.getElementById('smsBtn').href=`sms:+${CONFIG.myPhone}?&body=${encodeURIComponent(msg)}`;
 
   const copyBtn=document.getElementById('copyBtn');
   copyBtn.onclick=async()=>{
     try{ await navigator.clipboard.writeText(msg); copyBtn.textContent='Message copié ✓'; copyBtn.classList.add('done'); }
     catch(_){ copyBtn.textContent='Copie indisponible'; }
   };
+
+  // Envoi automatique de l'e-mail (elle n'a rien à faire de plus)
+  sendEmail(dTxt, tTxt);
+}
+
+/* ---- Envoi e-mail automatique via Web3Forms ---- */
+async function sendEmail(dTxt, tTxt){
+  const status=document.getElementById('sendStatus');
+  // Pas encore configuré : on n'affiche rien, les boutons ci-dessous servent de secours.
+  if(!CONFIG.web3formsKey || CONFIG.web3formsKey==="TON_ACCESS_KEY"){ status.textContent=""; return; }
+  status.textContent="Envoi en cours… 💌";
+  try{
+    const res=await fetch("https://api.web3forms.com/submit",{
+      method:"POST",
+      headers:{ "Content-Type":"application/json", "Accept":"application/json" },
+      body:JSON.stringify({
+        access_key:CONFIG.web3formsKey,
+        subject:"💌 Elle a dit OUI !",
+        from_name:"Date Request",
+        "Réponse":"OUI 💖",
+        "Prénom":CONFIG.herName.trim() || "(non précisé)",
+        "Quand":`${dTxt} à ${tTxt}`,
+        "Activité":pick.act
+      })
+    });
+    const data=await res.json();
+    if(data.success){ status.innerHTML=`✅ C'est envoyé à ${CONFIG.myName} !`; }
+    else{ status.innerHTML="⚠️ L'envoi auto n'a pas marché — tu peux utiliser un bouton ci-dessous."; }
+  }catch(_){
+    status.innerHTML="⚠️ Pas de connexion — utilise un bouton ci-dessous.";
+  }
 }
 
 /* ---- Pluie de cœurs ---- */
