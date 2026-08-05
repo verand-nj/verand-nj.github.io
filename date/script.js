@@ -40,7 +40,7 @@ const arena=document.getElementById('arena');
 const btnYes=document.getElementById('btnYes');
 const btnNo=document.getElementById('btnNo');
 // Les phrases qui s'affichent sur le bouton "Non" au fur et à mesure :
-const taunts=["Non","T'es sûre ?","Réfléchis…","Vraiment ?","Attends…","Regarde le Oui 👀","Dernière chance","Allez quoi 🥺","Impossible 😌"];
+const taunts=["Non", "whèè maaa il faut réfléchir un non?", "T'es sûre ?","Réfléchis…","Vraiment ?","Attends…","Regarde d'abord le Oui 👀","Dernière chance","Allez quoi 🥺","Impossible 😌"];
 let dodges=0;
 function fleeNo(){
   dodges++;
@@ -75,12 +75,12 @@ whenNext.onclick=()=>show('screen-what');
 /* ---- Écran 4 : activité ---- */
 // Pour modifier les activités : change/ajoute des lignes ici (e=emoji, t=titre, s=sous-titre)
 const acts=[
-  {e:"🍝",t:"Restau",s:"Une bonne table"},
-  {e:"🎬",t:"Ciné",s:"Un film + popcorn"},
+  {e:"🍝",t:"Restau",s:"J'espère que tu as un grand appetit"},
+  {e:"🎬",t:"Ciné",s:"Mouais non t'aime pas"},
   {e:"🍹",t:"Un verre",s:"Bar cosy"},
-  {e:"🚶",t:"Balade",s:"Marche & discussion"},
-  {e:"☕",t:"Café",s:"Simple & sympa"},
-  {e:"🎲",t:"Surprise",s:"Je gère tout"}
+  {e:"🚶",t:"Balade",s:"Petite balade tu connais"},
+  {e:"☕",t:"Café",s:"Simplement simple quoi..."},
+  {e:"🎲",t:"Surprise",s:"Je gère tout et à moi de te surprendre, même si c'est pas évident..."}
 ];
 const whatNext=document.getElementById('whatNext');
 const actC=document.getElementById('actChoices');
@@ -110,11 +110,11 @@ function buildRecap(){
 
   // Le petit mot doux (tu peux réécrire ce texte comme tu veux) :
   document.getElementById('loveNote').innerHTML=
-    `Alors c'est noté 🌹<br>Je passe te chercher ${dTxt} à ${tTxt}…<br>et je viens les bras chargés de fleurs 💐<br>Habille-toi bien, je m'occupe du reste. ✨`;
+    `Alors c'est noté 🌹<br>On se dit donc ${dTxt} à ${tTxt}…<br> t'es pas allergique aux fleurs 💐 pas vrai ?`;
 
   // Le message pré-rempli qu'elle t'envoie :
   const who=CONFIG.herName.trim()?CONFIG.herName.trim()+' — ':'';
-  const msg=`Coucou ${CONFIG.myName} ! C'est OUI 💖 ${who}Je suis dispo le ${dTxt} à ${tTxt} et j'adorerais un ${pick.act.toLowerCase()}. Viens me chercher avec mes fleurs 🌹😄`;
+  const msg=`Coucou ${CONFIG.myName} ! C'est OUI 💖 ${who}Je suis dispo le ${dTxt} à ${tTxt} et j'adorerais un ${pick.act.toLowerCase()}.`;
   document.getElementById('waBtn').href=`https://wa.me/${CONFIG.myPhone}?text=${encodeURIComponent(msg)}`;
   // SMS pré-rempli (fonctionne sur iPhone et Android) :
   document.getElementById('smsBtn').href=`sms:+${CONFIG.myPhone}?&body=${encodeURIComponent(msg)}`;
